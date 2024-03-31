@@ -18,7 +18,7 @@ abstract class QuoteDB : RoomDatabase() {
             if (INSTANCE == null) {
                 synchronized(this) {
                     INSTANCE = Room.databaseBuilder(
-                        context,
+                        context.applicationContext,
                         QuoteDB::class.java,
                         "QuotesDB"
                         )

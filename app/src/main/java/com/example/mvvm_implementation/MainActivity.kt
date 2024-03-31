@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this, ViewModelFactory(repository)).get(MainViewModel::class.java)
 
         mainViewModel.getQuotes().observe(this, Observer {
-            binding.quotes = it.toString()
+            binding.quotes = it.joinToString("\n") { it.text }
             })
 
         binding.buttonInsertQuote.setOnClickListener {
